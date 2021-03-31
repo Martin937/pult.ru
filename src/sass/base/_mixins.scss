@@ -1,0 +1,184 @@
+/*  Создаём гибкий размер шрифта, зависящий от размера экрана */
+//  @include respFontSize(16px, 34px, 480px, 1280px, 22px);
+@mixin respFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcRespFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+
+// @include font(size-$font-size, weight-$font-weight, color-$font-color);
+@mixin font(
+  $f-s: $main_font-size,
+  $f-w: $main_font-weight,
+  $f-c: $main_font-color
+) {
+  font: {
+    size: $f-s;
+    weight: $f-w;
+    family: $main_font-family;
+  }
+  color: $f-c;
+}
+
+// @include title($s:$title_font-size, $w:$title_font-weight, $c:title_font-color);
+@mixin title(
+  $s: $title_font-size,
+  $w: $title_font-weight,
+  $c: $title_font-color
+) {
+  font: {
+    size: $s;
+    weight: $w;
+  }
+  color: $c;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// @include flex(j-c:space-between, a-i:center);
+@mixin flex($j-c: space-between, $a-i: center) {
+  display: flex;
+  justify-content: $j-c;
+  align-items: $a-i;
+}
+
+// @include centerTL(T-50%, L-50%);
+@mixin centerTL($top: 50%, $left: 50%) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate(-50%, -50%);
+}
+
+// @include centerBR(B-50%, R-50%);
+@mixin centerBR($bottom: 50%, $right: 50%) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+  transform: translate(-50%, -50%);
+}
+
+// @include centerX(T-0%, B-auto);
+@mixin centerX($top: auto, $bottom: auto) {
+  position: absolute;
+  left: 50%;
+  top: $top;
+  bottom: $bottom;
+  transform: translateX(-50%);
+}
+
+// @include centerY(L-50%, R-auto);
+@mixin centerY($left: auto, $right: auto) {
+  position: absolute;
+  top: 50%;
+  left: $left;
+  right: $right;
+  transform: translateY(-50%);
+}
+/* 
+* создать треугольник внутри псевдоэлемента и добавить свойства позиционирования (т.е. вверху, слева)
+* $direction: up, down, left, right
+*/
+// @include triangle(up, 26px, #222);
+@mixin triangle($direction: up, $size: 26px, $color: #222) {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  @if ($direction == "up") {
+    border-bottom: $size solid $color;
+    border-left: 1/2 * $size solid transparent;
+    border-right: 1/2 * $size solid transparent;
+  } @else if ($direction == "down") {
+    border-top: $size solid $color;
+    border-left: 1/2 * $size solid transparent;
+    border-right: 1/2 * $size solid transparent;
+  } @else if ($direction == "left") {
+    border-top: 1/2 * $size solid transparent;
+    border-bottom: 1/2 * $size solid transparent;
+    border-right: $size solid $color;
+  } @else if ($direction == "right") {
+    border-top: 1/2 * $size solid transparent;
+    border-bottom: 1/2 * $size solid transparent;
+    border-left: $size solid $color;
+  }
+}
+
+/*
+*  директива позволяет управлять размерами min-max в соответствии со стилем
+*/
+// @include triangle($direction, $size: 6px, $color: #222);
+
+@mixin respondTo($media) {
+  @if $media == smartphone {
+    @media (max-width: $smartphone) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) {
+      @content;
+    }
+  } @else if $media == smallScreen {
+    @media (max-width: $desktop) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+/* для вертикального центрирования элементов с динамическими размерами */
+// @include ghostVerticalAlign();
+@mixin ghostVerticalAlign() {
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0.1px;
+  }
+}
+
+/* Вариант для анимации */
+// @include animation($name, $duration: 1000ms, $iterations: infinite,   $timing-function: ease, $delay: 0ms);
+@mixin animation(
+  $name,
+  $duration: 1000ms,
+  $iterations: infinite,
+  $timing-function: ease,
+  $delay: 0ms
+) {
+  // There is a FF bug that requires all time values to have units, even 0 !!!!!!
+  -webkit-animation: $name $duration $iterations $timing-function $delay;
+  -moz-animation: $name $duration $iterations $timing-function $delay;
+  -o-animation: $name $duration $iterations $timing-function $delay;
+  animation: $name $duration $iterations $timing-function $delay;
+}
+
+/* миксин size() определяющий ширину и высоту. Первый аргумент — ширина, второй — высота. Если высота не указана, она возвращается к значению ширины.*/
+// @include size(100%, 1px);
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin absolute($args) {
+  @include position("absolute", $args);
+}
+@mixin fixed($args) {
+  @include position("fixed", $args);
+}
+@mixin relative($args) {
+  @include position("relative", $args);
+}
