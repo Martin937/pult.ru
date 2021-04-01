@@ -1,107 +1,232 @@
 //--------------------------------------------
-//                                        1200
+//                                        1250
 //--------------------------------------------
-@media (max-width: $desktop) {
-  //------------------------
-  //          header
-  //------------------------
-  //------------------------
-  //          main
-  //------------------------
-  //------------------------
-  //          footer
-  //------------------------
+@media (max-width: 1250px) {
+  .container {
+    max-width: 90vw;
+  }
+  .footer__wrapper {
+    grid-template: minmax(45px, auto) 1fr / repeat(6, minmax(15vw, auto));
+  }
 }
+
 //--------------------------------------------
 //                                        991
 //--------------------------------------------
-@media (max-width: $notebook) {
-  //------------------------
-  //          header
-  //------------------------
+@media (max-width: 991px) {
   //------------------------
   //          main
   //------------------------
+  .slide {
+    &__text {
+      padding: 10px 30px;
+      font-size: 36px;
+      right: 0;
+      &_fs60 {
+        font-size: 46px;
+        span {
+          font-size: 150px;
+        }
+      }
+    }
+    &__title {
+      font-size: 18px;
+    }
+    &__subtitle {
+      font-size: 12px;
+    }
+    &__footer {
+      padding: 0 30px;
+      align-items: flex-end;
+    }
+  }
+  .swiper2 {
+    margin-top: 40px;
+  }
+  //------------------------
+  //          menu
+  //------------------------
+  .menu {
+    &__link {
+      font-size: 18px;
+    }
+  }
   //------------------------
   //          footer
   //------------------------
+  .footer {
+    margin-top: 190px;
+    margin-bottom: 30px;
+    &__wrapper {
+      row-gap: 70px;
+    }
+    &__logo {
+      width: 100px;
+    }
+    &__tel {
+      display: block;
+      font-size: 20px;
+      margin-top: 4px;
+    }
+    &__text {
+      font-size: 10px;
+    }
+    &__item {
+      margin-bottom: 15px;
+    }
+    &__link,
+    &__copyright {
+      font-size: 12px;
+    }
+  }
 }
 //--------------------------------------------
 //                                        767
 //--------------------------------------------
-@media (max-width: $phablet) {
-  //------------------------
-  //          header
-  //------------------------
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 36px;
-    height: 18px;
-    span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background-color: #fff;
-      margin-bottom: 5px;
-      transition: 0.5s all;
-    }
-    &_active {
-      span {
-        margin-bottom: -2px;
-        &:nth-child(1) {
-          transform: translateY(3px) rotate(-45deg);
-        }
-        &:nth-child(2) {
-          display: none;
-        }
-        &:nth-child(3) {
-          transform: translateY(3px) rotate(45deg);
-        }
-      }
-    }
-  }
-  .nav {
-    position: fixed;
-    flex-direction: column;
-    @include flex(space-evenly, center);
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100vh;
-    padding: 0px 10px 100px;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: 0.6s all;
-    z-index: 1;
-    &_active {
-      left: 0;
-    }
-    &__link {
-      margin: 0;
-      font-size: 16px;
-    }
+@media (max-width: 767px) {
+  .container {
+    max-width: 95vw;
   }
   //------------------------
   //          main
   //------------------------
+  .slide {
+    &__text {
+      font-size: 30px;
+      &_fs60 {
+        font-size: 32px;
+        span {
+          font-size: 100px;
+        }
+      }
+    }
+    &__title {
+      font-size: 16px;
+    }
+    &__subtitle {
+      font-size: 10px;
+    }
+  }
+  //------------------------
+  //          menu
+  //------------------------
+  .menu {
+    &__link {
+      font-size: 16px;
+    }
+    &__item {
+      padding: 8px 0;
+    }
+  }
   //------------------------
   //          footer
   //------------------------
+  .footer {
+    margin-top: 150px;
+    margin-bottom: 25px;
+    &__logo {
+      width: 70px;
+      padding-right: 10px;
+    }
+    &__tel {
+      font-size: 16px;
+    }
+    &____text {
+      font-size: 8px;
+    }
+    &__item {
+      margin-bottom: 10px;
+    }
+    &__link,
+    &__copyright {
+      font-size: 10px;
+    }
+    &__wrapper {
+      row-gap: 50px;
+    }
+  }
 }
 //--------------------------------------------
 //                                        575
 //--------------------------------------------
-@media (max-width: $phone) {
-  //------------------------
-  //          header
-  //------------------------
+@media (max-width: 576px) {
   //------------------------
   //          main
   //------------------------
+  .main {
+    padding-top: 20px;
+  }
+  .slide {
+    &__text {
+      font-size: 20px;
+      padding: 5px 30px;
+      &_fs60 {
+        font-size: 32px;
+        span {
+          font-size: 100px;
+        }
+      }
+    }
+    &__title {
+      font-size: 14px;
+    }
+    &__subtitle {
+      margin-top: 4px;
+    }
+    &__footer {
+      min-height: 45px;
+    }
+  }
+  .swiper-container {
+    padding-bottom: 30px;
+  }
+  .swiper2 {
+    margin-top: 20px;
+  }
+  .swiper-container-horizontal
+    > .swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 5px;
+  }
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+  }
+  //------------------------
+  //          menu
+  //------------------------
+  .menu {
+    &__link {
+      font-size: 12px;
+    }
+    &__item {
+      padding: 6px 0;
+    }
+  }
   //------------------------
   //          footer
   //------------------------
+  .col-logo {
+    flex-direction: column;
+  }
+  .footer {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    &__wrapper {
+      row-gap: 40px;
+      column-gap: 2px;
+    }
+    &__tel {
+      font-size: 12px;
+    }
+    &__text {
+      font-size: 6px;
+    }
+    &__item {
+      margin-bottom: 3px;
+    }
+    &__link {
+      font-size: 6px;
+    }
+  }
 }

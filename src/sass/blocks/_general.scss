@@ -1,23 +1,11 @@
 body {
-  @include font();
+  font-family: "Gilroy-Regular", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .container {
-  max-width: 85vw;
+  max-width: 80vw;
+  max-width: 1200px;
   margin: 0 auto;
-}
-
-.logo {
-  width: 130px;
-  height: 40px;
-}
-
-.title {
-  @include title();
-  letter-spacing: 2px;
-  text-shadow: $text-shadow;
-}
-.swiper-container {
-  width: 600px;
-  height: 300px;
 }

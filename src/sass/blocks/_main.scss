@@ -1,0 +1,97 @@
+.main {
+  padding-top: 40px;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+}
+.swiper2 {
+  margin-top: 50px;
+}
+.swiper-pagination-bullet {
+  width: 18px;
+  height: 18px;
+  background: $main;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: black;
+}
+.swiper-container-horizontal
+  > .swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 0 10px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 0px;
+}
+
+.slide {
+  &__link {
+    text-decoration: none;
+  }
+  &__banner {
+    max-height: 540px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__text {
+    position: absolute;
+    bottom: 0;
+    padding: 20px 60px;
+    font-family: "Gilroy-SemiBold", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-size: 40px;
+    line-height: 100%;
+    color: $main;
+    text-transform: uppercase;
+    &_white {
+      color: white;
+    }
+    span {
+      color: black;
+    }
+    &_fs60 {
+      color: white;
+      font-size: 60px;
+      line-height: 100%;
+      letter-spacing: 2px;
+      span {
+        color: white;
+        font-size: 190px;
+        line-height: 100%;
+      }
+    }
+  }
+  &__footer {
+    @include flex(center, flex-start);
+    flex-direction: column;
+    min-height: 60px;
+    padding: 0 60px;
+    background-color: #1d9cd8;
+    color: white;
+  }
+  &__title {
+    font-family: "Gilroy-SemiBold", system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  &__subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+}

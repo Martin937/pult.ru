@@ -1,29 +1,26 @@
 @font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway-Thin.woff2") format("woff2"),
-    url("../fonts/Raleway-Thin.woff") format("woff"),
-    url("../fonts/Raleway-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
+  font-family: "Gilroy-Regular";
+  src: url("../fonts/gilroy-regular.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/gilroy-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/gilroy-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/gilroy-regular.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/gilroy-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/gilroy-regular.svg#gilroy-regular")
+      format("svg"); /* Chrome < 4, Legacy iOS */
   font-display: swap;
 }
-
 @font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway-Regular.woff2") format("woff2"),
-    url("../fonts/Raleway-Regular.woff") format("woff"),
-    url("../fonts/Raleway-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Raleway";
-  src: url("../fonts/Raleway-Bold.woff2") format("woff2"),
-    url("../fonts/Raleway-Bold.woff") format("woff"),
-    url("../fonts/Raleway-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
+  font-family: "Gilroy-SemiBold";
+  src: url("../fonts/gilroy-semibold.eot"); /* IE 9 Compatibility Mode */
+  src: url("../fonts/gilroy-semibold.eot?#iefix") format("embedded-opentype"),
+    /* IE < 9 */ url("../fonts/gilroy-semibold.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/gilroy-semibold.woff")
+      format("woff"),
+    /* Firefox >= 3.6, any other modern browser */
+      url("../fonts/gilroy-semibold.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/gilroy-semibold.svg#gilroy-semibold") format("svg"); /* Chrome < 4, Legacy iOS */
   font-display: swap;
 }

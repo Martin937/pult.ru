@@ -1,3 +1,10 @@
-.hamburger {
-  display: none;
+.header {
+  padding: 20px 0;
+  &__wrapper {
+    @include flex();
+  }
+}
+.logo {
+  @include flex(flex-end, center);
+  cursor: pointer;
 }
