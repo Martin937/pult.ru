@@ -16,8 +16,8 @@
 16.
 17. Создаём репозиторий на GITHUB и связываем его с проектом
 18.
-19. git remote add origin https://github.com/Martin937/agrokeep.git Прописываем путь к github
-20. git remote set-url origin https://github.com/Martin937/agrokeep.git Если нужно изменить уже существующий
+19. git remote add origin https://github.com/Martin937/pult.ru.git Прописываем путь к github
+20. git remote set-url origin https://github.com/Martin937/pult.ru.git Если нужно изменить уже существующий
 21. git push -u origin master Заливка на github
 22. git pull Обновление всех связей и изменений
 23. git push Заливка на github
@@ -209,3 +209,4 @@ popup — всплывающее окно
 tooltip, tip — всплывающие подсказки
 
 preview — анонс, отрывок, например новости или поста, может состоять из заголовка, описания и картинки. Предполагается ссылка на полную версию
+https://github.com/Martin937/pult.ru.git
